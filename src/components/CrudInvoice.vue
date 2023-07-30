@@ -1,4 +1,14 @@
-<template></template>
+<template>
+    <div>
+      <h2>Facturas</h2>
+      <ul>
+        <li v-for="factura in facturas" :key="factura.id">
+          {{ factura.numero }} - {{ factura.fecha }} - {{ factura.total }}
+          <button @click="eliminarFactura(factura.id)">Eliminar</button>
+        </li>
+      </ul>
+    </div>
+  </template>
 
 <script>
 import { obtenerTodasLasFacturas, eliminarFactura } from '../services/FacturaService';

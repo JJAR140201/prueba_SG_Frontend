@@ -1,5 +1,13 @@
 <template>
-
+  <div>
+    <h2>Lista de Productos</h2>
+    <ul>
+      <li v-for="producto in productos" :key="producto.id">
+        {{ producto.nombre }} - {{ producto.precio }}
+        <button @click="eliminarProducto(producto.id)">Eliminar</button>
+      </li>
+    </ul>
+  </div>
 </template>
 
 <script>

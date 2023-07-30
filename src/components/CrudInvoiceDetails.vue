@@ -1,4 +1,14 @@
-<template></template>
+<template>
+    <div>
+      <h2>Detalle de Factura</h2>
+      <ul>
+        <li v-for="detalle in detalles" :key="detalle.id">
+          {{ detalle.descripcion }} - {{ detalle.cantidad }} - {{ detalle.precio }}
+          <button @click="eliminarDetalleFactura(detalle.id)">Eliminar</button>
+        </li>
+      </ul>
+    </div>
+</template>
 
 <script>
 import { obtenerDetalleFactura, eliminarDetalleFactura } from '../services/DetalleFacturaService';
